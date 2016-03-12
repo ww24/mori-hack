@@ -1,0 +1,104 @@
+
+/* util */
+@font-face {
+  font-family: sans;
+  src: local("Hiragino Sans"),
+  		 local("ヒラギノ角ゴシック"),
+       local("Hiragino Kaku Gothic ProN"),
+       local("ヒラギノ角ゴ ProN");
+}
+
+body {
+  font-family: sans;
+}
+
+/* default */
+div {
+  box-sizing: border-box;
+}
+
+/* header */
+.header {
+  position: relative;
+  height: 65px;
+  padding-top: 30px;
+  text-align: center;
+}
+.back {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #478345;
+}
+.back:active {
+  opacity: 0.6;
+}
+.logo-header {
+  position: relative;
+  width: 25px;
+  height: 24px;
+  margin: 8px auto 0 auto;
+  background-image: url("../img/logo_header.png");
+  background-size: contain;
+}
+
+/* sub header */
+.sub-header {
+
+}
+.bg-label {
+  height: 32px;
+  padding: 9px 5px 5px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  background: rgba(0, 6, 12, 0.1);
+}
+.right-button {
+  height: 32px;
+  padding: 9px 5px 5px 10px;
+  margin-top: -32px;
+  text-align: right;
+  font-size: 13px;
+}
+.right-button:after {
+  margin-bottom: 10px;
+  content: "＞";
+  font-size: 15px;
+  color: #888;
+}
+.button-highlight {
+  color: #36bb29;
+}
+
+/* content */
+.content {
+}
+
+/* woodList */
+.status {
+  width: 74px;
+  height: 24px;
+  background-size: contain;
+}
+.status_0 {
+  background-image: url("../img/list_label1.png");
+}
+.status_1 {
+  background-image: url("../img/list_label2.png");
+}
+.status_2 {
+  background-image: url("../img/list_label3.png");
+}
+.status_3 {
+  background-image: url("../img/list_label4.png");
+}
+.status_4 {
+  background-image: url("../img/list_label5.png");
+}
+
+/* timeline */
+ul.timeline {
+  border-top: 1px solid #ccc;
+}
