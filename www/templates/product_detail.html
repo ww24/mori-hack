@@ -1,0 +1,38 @@
+<header class="app-header app-header-sm">
+  <div ng-controller="header" class="header header-boader">
+    <h2 class="">製品詳細</h2>
+    <div ng-click="back()" class="back">< 戻る</div>
+  </div>
+</header>
+
+<img class="image-place" ng-src="{{product.imageURL.value}}" alt="">
+
+<div class="container container-sm">
+  <div class="product-detail-header">
+    <h3>椅子</h3>
+    <p>{{product.date.value}} 製品化</p>
+  </div>
+
+  <dl class="shop-detail">
+    <dt>卸先</dt>
+    <dd>{{product.shop.value}}</dd>
+  </dl>
+
+  <button ng-click="openTimeline()" class="btn timeline-btn">製品がお客に届くまで</button>
+
+  <dl class="wood-detail">
+    <dt>この製品になった木について</dt>
+    <dd>
+      {{wood.tree_type.value}}<br>
+      樹齢：{{wood.age.value}}
+    </dd>
+  </dl>
+
+  <dl class="share">
+    <dt>SHARE</dt>
+    <dd>
+      <div class="share-facebook">シェア</div>
+      <div class="share-twitter">ツイート</div>
+    </dd>
+  </div>
+</div>

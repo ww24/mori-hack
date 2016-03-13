@@ -1,16 +1,21 @@
-<h3>詳細</h3>
-<div class="panel panel-default">
-  <div class="panel-heading">{{wood.tree_name.value}}</div>
-  <div class="panel-body">
-    <div class="thumbnail">
-      <img ng-src="{{wood.url.value}}" alt="樹木画像">
-    </div>
+<header class="app-header">
+  <div ng-controller="header" class="header header-boader">
+    <h2 class="">樹木詳細</h2>
+    <div ng-click="back()" class="back">< 戻る</div>
   </div>
+  <div class="sub-header">
+    <div class="bg-label">{{wood.tree_name.value}}</div>
+  </div>
+</header>
 
+<div ng-if="wood.url.value" class="thumbnail">
+  <img ng-src="{{wood.url.value}}" alt="樹木画像">
+</div>
+<table class="table table-condensed table-common">
   <table class="table">
     <tbody>
       <tr>
-        <th>品種</th>
+        <th>樹種</th>
         <td>{{wood.tree_type.value}}</td>
       </tr>
       <tr>

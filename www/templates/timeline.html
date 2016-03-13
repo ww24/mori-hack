@@ -1,6 +1,10 @@
-<div ng-controller="header" class="header">
-  <div class="logo-header"></div>
-</div>
+<header class="app-header">
+  <div ng-controller="header" class="header header-boader">
+    <div class="logo-header"></div>
+    <div ng-click="back()" class="back">< 戻る</div>
+  </div>
+</header>
+<!--
 <ul class="timeline">
     <li ng-repeat="item in list">
       <div class="timeline-badge">
@@ -13,4 +17,114 @@
         </div>
       </div>
     </li>
-</ul>
+</ul> -->
+
+<div class="container">
+    <div class="border-box">
+        <div class="border">
+        </div>
+    </div>
+    <div ng-repeat="item in list" class="trace-box clearfix">
+        <div class="trace-img--box">
+            <img ng-if="item.state==='product'" src="./img/trace_product.png" alt="production" class="trace-img trace-img--big trace-img--product"/>
+            <img ng-if="item.state==='kouri'" src="./img/trace_kouri.png" alt="production" class="trace-img"/>
+            <img ng-if="item.state==='mokkou'" src="./img/trace_mokkou.png" alt="production" class="trace-img"/>
+            <img ng-if="item.state==='seizai'" src="./img/trace_seizai.png" alt="production" class="trace-img"/>
+            <img ng-if="item.state==='owner'" src="./img/trace_owner.png" alt="production" class="trace-img trace-img--big trace-img--owner"/>
+        </div>
+        <div ng-if="item.state==='owner'" class="trace-text">
+            <p class="trace-label--owner">
+                オーナー
+            </p>
+            <p class="trace-text--title">
+                {{item.owner}}<font class="trace-text--owner-hono">さん</font>
+            </p>
+            <p class="trace-text--date">
+                {{item.date}} {{item.getStateName(item.state)}}
+            </p>
+        </div>
+        <div ng-if="item.state!=='owner'" class="trace-text">
+            <p ng-class="trace-text--{{item.state}}" class="trace-text--title">
+                {{item.name}}
+            </p>
+            <p class="trace-text--date">
+                {{item.date}} {{item.getStateName(item.state)}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <div class="border-box">
+        <div class="border">
+        </div>
+    </div>
+    <div class="trace-box clearfix">
+        <div class="trace-img--box">
+            <img src="./img/trace_product.png" alt="production" class="trace-img trace-img--big trace-img--product"/>
+        </div>
+        <div class="trace-text">
+            <p class="trace-text--title">
+                購入
+            </p>
+            <p class="trace-text--date">
+                2016/4/1
+            </p>
+        </div>
+    </div>
+    <div class="trace-box clearfix">
+        <div class="trace-img--box">
+            <img src="./img/trace_kouri.png" alt="production" class="trace-img"/>
+        </div>
+        <div class="trace-text">
+            <p class="trace-text--title trace-text--kouri">
+                そごうXXX店
+            </p>
+            <p class="trace-text--date">
+                2016/3/21 入荷
+            </p>
+        </div>
+    </div>
+    <div class="trace-box clearfix">
+        <div class="trace-img--box">
+            <img src="./img/trace_mokkou.png" alt="production" class="trace-img"/>
+        </div>
+        <div class="trace-text">
+            <p class="trace-text--title trace-text--seizai">
+                人吉木工
+            </p>
+            <p class="trace-text--date">
+                2016/3/1 製造
+            </p>
+        </div>
+    </div>
+    <div class="trace-box clearfix">
+        <div class="trace-img--box">
+            <img src="./img/trace_seizai.png" alt="production" class="trace-img"/>
+        </div>
+        <div class="trace-text">
+            <p class="trace-text--title trace-text--mokkou">
+                人吉製材所
+            </p>
+            <p class="trace-text--date">
+                2016/2/20 製材
+            </p>
+        </div>
+    </div>
+    <div class="trace-box clearfix">
+        <div class="trace-img--box">
+            <img src="./img/trace_owner.png" alt="production" class="trace-img trace-img--big trace-img--owner"/>
+        </div>
+        <div class="trace-text">
+            <p class="trace-label--owner">
+                オーナー
+            </p>
+            <p class="trace-text--title">
+                井上 まこと<font class="trace-text--owner-hono">さん</font>
+            </p>
+            <p class="trace-text--date">
+                2016/2/15 伐採
+            </p>
+        </div>
+    </div>
+</div> -->

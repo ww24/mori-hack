@@ -1,13 +1,16 @@
-<div ng-controller="header" class="header">
-  <div class="logo-header"></div>
-</div>
-<div class="sub-header">
-  <div class="bg-label">あなたの土地の木一覧</div>
-  <div class="right-button">
-    <span class="button-highlight">製品一覧(1)</span>
+<header class="app-header">
+  <div ng-controller="header" class="header">
+    <div class="logo-header"></div>
   </div>
-</div>
-<table class="table table-condensed">
+  <div class="sub-header">
+    <div class="bg-label">あなたの土地の木一覧</div>
+    <div class="right-button">
+      <span ng-click="openProductList()" class="button-highlight">製品一覧(1)</span>
+    </div>
+  </div>
+</header>
+
+<table class="table table-condensed table-common wood-list">
   <thead>
     <tr>
       <th>No.</th>
@@ -18,12 +21,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="wood in woodList" ng-click="wood.openTimeline()">
+    <tr ng-repeat="wood in woodList" ng-click="wood.openDetail($event)">
       <td>{{pad(wood.$id.value)}}</td>
       <td>{{wood.tree_type.value}}</td>
-      <td>4年</td>
-      <td><div class="status status_0"></div></td>
-      <td><button class="btn btn-sm">MAP</button></td>
+      <td>{{wood.age.value}}</td>
+      <td><div ng-click="wood.openProduct($event)" ng-class="wood.statusToClass()" class="status"></div></td>
+      <td><button ng-click="wood.openMap()" ng-class="wood.statusToMap()" ng-disabled="wood.statusToMap()!=='map-enable'" class="btn btn-sm map-btn">MAP</button></td>
     </tr>
   </tbody>
 </table>

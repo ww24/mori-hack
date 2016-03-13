@@ -1,25 +1,28 @@
-<div ng-controller="header" class="header">
-  <h3 class="text-center">樹木一覧</h3>
-  <div ng-click="back()" class="back">< 戻る</div>
-</div>
-<div class="bg-label">あなたの木から生まれた製品</div>
-<table class="table table-condensed">
+<header class="app-header">
+  <div ng-controller="header" class="header">
+    <h2 class="">製品化一覧</h2>
+    <div ng-click="back()" class="back">< 戻る</div>
+  </div>
+  <div class="sub-header">
+    <div class="bg-label">あなたの木から生まれた製品</div>
+  </div>
+</header>
+
+<table class="table table-condensed table-common product-list">
   <thead>
     <tr>
-      <th>No.</th>
-      <th>樹種</th>
-      <th>樹齢</th>
-      <th>状態</th>
-      <th>地図</th>
+      <th>写真</th>
+      <th>製品</th>
+      <th>卸先</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="wood in woodList" ng-click="wood.openTimeline()">
-      <td>{{wood.$id.value}}</td>
-      <td>{{wood.tree_type.value}}</td>
-      <td>4年</td>
-      <td><div class="status status_0"></div></td>
-      <td><button class="btn btn-sm">MAP</button></td>
+    <tr ng-repeat="item in productList" ng-click="item.openDetail()">
+      <td><img class="product-thumbnail" ng-src="{{item.thumbnailURL.value}}" alt="製品画像"></td>
+      <td>{{item.name.value}}</td>
+      <td>{{item.shop.value}}</td>
+      <td>＞</td>
     </tr>
   </tbody>
 </table>
