@@ -116,11 +116,12 @@ angular
   console.log(wood);
   $scope.wood = wood;
 
+  // Google Map API
   var myLatLng = {lat: Number(wood.lat.value), lng: Number(wood.lng.value)};
   var map = new google.maps.Map(document.getElementById("map"), {
     center: myLatLng,
     scrollwheel: false,
-    zoom: 10
+    zoom: 16
   });
 
   // Create a marker and set its position.
